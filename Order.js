@@ -21,20 +21,14 @@ export class Order {
             d.setMinutes(d.getMinutes() + 120);
             aReturn.push(`Please come to your table at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
 
-          } else {
-            aReturn.push("Thanks for trying our reservation system");
-            aReturn.push("Maybe next time");
-          }
-          
-          //Takeout
-          if (sInput.toLowerCase().startsWith('t')) {
+          } if (sInput.toLowerCase().startsWith('t')) {
             aReturn.push(`Press enter to proceed to Menu...`);
 
           } else {
             aReturn.push("Thanks for trying our reservation system");
             aReturn.push("Maybe next time");
           }
-
+      
           return aReturn;
         },
 
@@ -47,18 +41,10 @@ export class Order {
           if (sInput.toLowerCase().startsWith('c')) {
             aReturn.push(`Press enter to proceed to add ons...`);
 
-          } else {
-            aReturn.push("Error: Wrong input. Try ordering again...");
-          }
-
-          if (sInput.toLowerCase().startsWith('b')) {
+          } if (sInput.toLowerCase().startsWith('b')) {
             aReturn.push(`Press enter to proceed to add ons...`);
 
-          } else {
-            aReturn.push("Error: Wrong input. Try ordering again...");
-          }
-
-          if (sInput.toLowerCase().startsWith('f')) {
+          } if (sInput.toLowerCase().startsWith('f')) {
             aReturn.push(`Press enter to proceed to add ons...`);
 
           } else {
@@ -80,11 +66,7 @@ export class Order {
             d.setMinutes(d.getMinutes() + 120);
             aReturn.push(`Please come pick up your order at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
 
-          } else {
-            aReturn.push("Error: Wrong input. Try ordering again...");
-          }
-
-          if (sInput.toLowerCase().startsWith('n')) {
+          } if (sInput.toLowerCase().startsWith('n')) {
             aReturn.push(`Thank you for ordering.`);
             let d = new Date();
             d.setMinutes(d.getMinutes() + 120);
