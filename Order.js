@@ -12,7 +12,7 @@ export class Order {
 
         RESERVING: (sInput) => {
           let aReturn = [];
-          this.isDone = true;
+          this.stateCur = this.OrderState.CHOOSING;
 
           //Reserve
           if (sInput.toLowerCase().startsWith('r')) {
@@ -25,70 +25,70 @@ export class Order {
           
           //Takeout
           if (sInput.toLowerCase().startsWith('t')) {
-            aReturn.push(`Would you like Chicken Biryani, Beef Biryani, or Fish Biryani?`);
+            aReturn.push(`Proceeding to Menu...`);
 
-
-
-            if (sInput.toLowerCase().startsWith('c')) {
-              aReturn.push(`Would you like a Pepsi with that?`);
-
-              if (sInput.toLowerCase().startsWith('y')) {
-                aReturn.push(`Thank you for ordering. `);
-                let d = new Date();
-                d.setMinutes(d.getMinutes() + 120);
-                aReturn.push(`Please come pick up your order at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
-  
-              } else {
-                aReturn.push("Error: Wrong input. Try ordering again...");
-              }
-
-            } else {
-              aReturn.push("Error: Wrong input. Try ordering again...");
-            }
-
-
-
-            if (sInput.toLowerCase().startsWith('b')) {
-              aReturn.push(`Would you like a Pepsi with that?`);
-
-              if (sInput.toLowerCase().startsWith('y')) {
-                aReturn.push(`Thank you for ordering. `);
-                let d = new Date();
-                d.setMinutes(d.getMinutes() + 120);
-                aReturn.push(`Please come pick up your order at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
-  
-              } else {
-                aReturn.push("Error: Wrong input. Try ordering again...");
-              }
-
-            } else {
-              aReturn.push("Error: Wrong input. Try ordering again...");
-            }
-
-
-
-            if (sInput.toLowerCase().startsWith('f')) {
-              aReturn.push(`Would you like a Pepsi with that?`);
-
-              if (sInput.toLowerCase().startsWith('y')) {
-                aReturn.push(`Thank you for ordering. `);
-                let d = new Date();
-                d.setMinutes(d.getMinutes() + 120);
-                aReturn.push(`Please come pick up your order at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
-  
-              } else {
-                aReturn.push("Error: Wrong input. Try ordering again...");
-              }
-
-            } else {
-              aReturn.push("Error: Wrong input. Try ordering again...");
-            }
-            
-
-          } else {
+          } 
+          
+          else {
             aReturn.push("Thanks for trying our reservation system");
             aReturn.push("Maybe next time");
           }
+          return aReturn;
+        },
+
+
+        CHOOSING: (sInput) => {
+          let aReturn = [];
+          this.stateCur = this.OrderState.PEPSI;
+          aReturn.push("Would you like Chicken Biryani, Beef Biryani, or Fish Biryani?");
+          
+          if (sInput.toLowerCase().startsWith('c')) {
+            aReturn.push(`Proceeding to add ons...`);
+
+          } 
+
+          if (sInput.toLowerCase().startsWith('b')) {
+            aReturn.push(`Proceeding to add ons...`);
+
+          } 
+
+          if (sInput.toLowerCase().startsWith('f')) {
+            aReturn.push(`Proceeding to add ons...`);
+
+          } 
+          
+          else {
+            aReturn.push("Error: Wrong input. Try ordering again...");
+          }
+          return aReturn;
+        },
+
+
+        PEPSI: (sInput) => {
+          let aReturn = [];
+          this.isDone = true;
+          aReturn.push("Would you like a Pepsi with that?");
+          
+          if (sInput.toLowerCase().startsWith('y')) {
+            aReturn.push(`Thank you for ordering.`);
+            let d = new Date();
+            d.setMinutes(d.getMinutes() + 120);
+            aReturn.push(`Please come pick up your order at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
+
+          } 
+
+          if (sInput.toLowerCase().startsWith('n')) {
+            aReturn.push(`Thank you for ordering.`);
+            let d = new Date();
+            d.setMinutes(d.getMinutes() + 120);
+            aReturn.push(`Please come pick up your order at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
+
+          } 
+
+          else {
+            aReturn.push("Error: Wrong input. Try ordering again...");
+          }
+
           return aReturn;
         }
 
