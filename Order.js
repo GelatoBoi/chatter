@@ -21,18 +21,20 @@ export class Order {
             d.setMinutes(d.getMinutes() + 120);
             aReturn.push(`Please come to your table at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
 
-          } 
-          
-          //Takeout
-          if (sInput.toLowerCase().startsWith('t')) {
-            aReturn.push(`Proceeding to Menu...`);
-
-          } 
-          
-          else {
+          } else {
             aReturn.push("Thanks for trying our reservation system");
             aReturn.push("Maybe next time");
           }
+          
+          //Takeout
+          if (sInput.toLowerCase().startsWith('t')) {
+            aReturn.push(`Press enter to proceed to Menu...`);
+
+          } else {
+            aReturn.push("Thanks for trying our reservation system");
+            aReturn.push("Maybe next time");
+          }
+
           return aReturn;
         },
 
@@ -43,23 +45,26 @@ export class Order {
           aReturn.push("Would you like Chicken Biryani, Beef Biryani, or Fish Biryani?");
           
           if (sInput.toLowerCase().startsWith('c')) {
-            aReturn.push(`Proceeding to add ons...`);
+            aReturn.push(`Press enter to proceed to add ons...`);
 
-          } 
-
-          if (sInput.toLowerCase().startsWith('b')) {
-            aReturn.push(`Proceeding to add ons...`);
-
-          } 
-
-          if (sInput.toLowerCase().startsWith('f')) {
-            aReturn.push(`Proceeding to add ons...`);
-
-          } 
-          
-          else {
+          } else {
             aReturn.push("Error: Wrong input. Try ordering again...");
           }
+
+          if (sInput.toLowerCase().startsWith('b')) {
+            aReturn.push(`Press enter to proceed to add ons...`);
+
+          } else {
+            aReturn.push("Error: Wrong input. Try ordering again...");
+          }
+
+          if (sInput.toLowerCase().startsWith('f')) {
+            aReturn.push(`Press enter to proceed to add ons...`);
+
+          } else {
+            aReturn.push("Error: Wrong input. Try ordering again...");
+          }
+
           return aReturn;
         },
 
@@ -75,7 +80,9 @@ export class Order {
             d.setMinutes(d.getMinutes() + 120);
             aReturn.push(`Please come pick up your order at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
 
-          } 
+          } else {
+            aReturn.push("Error: Wrong input. Try ordering again...");
+          }
 
           if (sInput.toLowerCase().startsWith('n')) {
             aReturn.push(`Thank you for ordering.`);
@@ -83,9 +90,7 @@ export class Order {
             d.setMinutes(d.getMinutes() + 120);
             aReturn.push(`Please come pick up your order at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
 
-          } 
-
-          else {
+          } else {
             aReturn.push("Error: Wrong input. Try ordering again...");
           }
 
