@@ -24,7 +24,9 @@ export class Order {
           } if (sInput.toLowerCase().startsWith('t')) {
             aReturn.push(`Press enter to proceed to Menu...`);
 
-          } else {
+          } 
+          
+          else {
             aReturn.push("Thanks for trying our reservation system");
             aReturn.push("Maybe next time");
           }
@@ -47,7 +49,9 @@ export class Order {
           } if (sInput.toLowerCase().startsWith('f')) {
             aReturn.push(`Press enter to proceed to add ons...`);
 
-          } else {
+          } 
+          
+          else {
             aReturn.push("Error: Wrong input. Try ordering again...");
           }
 
@@ -72,7 +76,9 @@ export class Order {
             d.setMinutes(d.getMinutes() + 120);
             aReturn.push(`Please come pick up your order at 67 Darling St, Brantford., Acton before ${d.toTimeString()}`);
 
-          } else {
+          } 
+          
+          else {
             aReturn.push("Error: Wrong input. Try ordering again...");
           }
 
