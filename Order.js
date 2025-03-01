@@ -35,6 +35,7 @@ export class Order {
             aReturn.push("Maybe next time");
           }
 
+          return aReturn;
         },
 
 
@@ -64,6 +65,7 @@ export class Order {
             aReturn.push("Error: Wrong input. Try ordering again...");
           }
 
+          return aReturn;
         },
 
 
@@ -92,6 +94,7 @@ export class Order {
             aReturn.push("Error: Wrong input. Try ordering again...");
           }
 
+          return aReturn;
         }
 
 
