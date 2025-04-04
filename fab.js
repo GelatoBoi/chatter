@@ -6,7 +6,7 @@ class Blur {
         this.div.id = "blurred_background";
         this.div.innerHTML = `<style>
         #blurred_background{
-            position:absolute;
+            position:fixed;
             top:0;
             left:0;
             height:100vh;
@@ -40,12 +40,12 @@ const suffix = (Math.random()*100).toFixed().toString();
 document.querySelector("body").insertAdjacentHTML("beforeend", `
     <style>
     #fab${suffix}, #modal${suffix}{
-        position: absolute;
+        position: fixed;
         bottom: 1em;
         right: 1em;
     }
     #clear${suffix}{
-        position: absolute;
+        position: fixed;
         top: -1em;
         right: 1em;
     }
